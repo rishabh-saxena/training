@@ -15,7 +15,7 @@ app.get('/read', function (req, res) {
   });
 });
 app.post('/write/:message', function (req, res) {
-  fs.writeFile(filePath, req.params.message, (error) => {
+  fs.appendFile(filePath,`<br> ${req.params.message} `, (error) => {
     if (error)
     { throw error; }
     else {
